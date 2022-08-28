@@ -1,7 +1,9 @@
 import './App.css';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
+import './components/Header.css'
 
 function App() {
   let [searchTerm, setSearchTerm] = useState('')
@@ -31,9 +33,13 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+      <header className="HeaderHead">Welcome to my music search Library!</header>
       <SearchBar handleSearch={handleSearch} />
       {message}
       <Gallery data={data} />
+      
+      </Router>
     </div>
   );
 }
